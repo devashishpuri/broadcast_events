@@ -1,0 +1,16 @@
+name: broadcast_events
+description: Enables you to broadcast global events in your app.
+
+version: 1.0.0
+
+author:
+  - Devashish Puri <devashishpuri@gmail.com>
+
+homepage: https://github.com/devashishpuri/broadcast_events
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+
+dev_dependencies:
