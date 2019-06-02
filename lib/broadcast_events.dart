@@ -70,7 +70,7 @@ class BroadcastEvents {
           'Type mismatch between Publisher Arguments and what Subscriber Expects');
     }
 
-    if (handlers == null || handlers.length == 0) {
+    if (handlers == null || handlers.isEmpty) {
       return;
     }
 
