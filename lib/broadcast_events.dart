@@ -34,7 +34,7 @@ class BroadcastEvents {
   /// topic
   /// * [topic] The topic to unsubscribe from
   /// * [handler] The event handler
-  unsubscribe<T>(String topic, {EventHandler<T> handler}) {
+  unsubscribe<T>(String topic, {EventHandler<T>? handler}) {
     if (handler == null) {
       _callbackMaps.remove(topic);
       return;
@@ -61,8 +61,8 @@ class BroadcastEvents {
   /// * [arguments] The arguments to pass to
   /// the handlers. It's better if custom
   /// Structure is used.
-  publish<T>(String topic, {T arguments}) {
-    List<EventHandler<T>> handlers;
+  publish<T>(String topic, {T? arguments}) {
+    List<EventHandler<T>>? handlers;
     try {
       handlers = _callbackMaps[topic];
     } catch (_) {
@@ -76,7 +76,11 @@ class BroadcastEvents {
 
     handlers.forEach((EventHandler<T> handler) {
       try {
-        handler(arguments);
+        if(arguments != null){
+          handler(arguments);
+        }else{
+          throw 'arguments null';
+        }
       } catch (_) {
         print('Error Occured while executing handler for topic $topic');
         print(_);
