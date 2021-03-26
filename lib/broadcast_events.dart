@@ -20,15 +20,19 @@ class BroadcastEvents {
   /// the provided handler
   /// * [topic] The topic to subscribe to
   /// * [handler] The event handler
-  subscribe<T>(String topic, EventHandler<T> handler) {
-    List<EventHandler<T>> handlers = _callbackMaps[topic];
+  subscribe<T>(String topic, EventHandler<T>? handler) {
+    List<EventHandler<T>>? handlers = _callbackMaps[topic];
+    if (handler == null) {
+      _callbackMaps.remove(topic);
+      return;
+    }
     if (handlers == null) {
       handlers = [];
       _callbackMaps[topic] = handlers;
     }
     handlers.add(handler);
   }
-
+git
   /// Unsubscribe from the given topic. Your handler
   /// will no longer recieve events published to this
   /// topic

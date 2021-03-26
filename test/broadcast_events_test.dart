@@ -2,12 +2,12 @@ import 'package:broadcast_events/broadcast_events.dart';
 
 void main() {
   /// Test Subscription
-  BroadcastEvents().subscribe<String>('CUSTOM_EVENT', (message) {
+  BroadcastEvents().subscribe('CUSTOM_EVENT', (message) {
     print(message);
   });
 
   BroadcastEvents()
-      .publish<String>('CUSTOM_EVENT', arguments: 'Hello Subscribers');
+      .publish('CUSTOM_EVENT', arguments: 'Hello Cuk');
 
   /// Test Unsubscription
   final _handler = (int code) => print('The Code is: $code');
