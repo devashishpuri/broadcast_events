@@ -32,7 +32,7 @@ class BroadcastEvents {
     }
     handlers.add(handler);
   }
-git
+
   /// Unsubscribe from the given topic. Your handler
   /// will no longer recieve events published to this
   /// topic
