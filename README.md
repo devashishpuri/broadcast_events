@@ -5,11 +5,11 @@ Enables you to broadcast events in your app.
 ## Usage
 
 ```yaml
-broadcast_receiver: ^1.0.0
+flutter_broadcast_receiver: ^1.0.0+1
 ```
 
 ```dart
-import 'package:broadcast_receiver/broadcast_receiver.dart';
+import 'package:flutter_broadcast_receiver/flutter_broadcast_receiver.dart';
 ```
 
 ## Param Usage

@@ -1,4 +1,4 @@
-import 'package:broadcast_receiver/broadcast_receiver.dart';
+import 'package:flutter_broadcast_receiver/flutter_broadcast_receiver.dart';
 
 void main() {
   /// Test Subscription

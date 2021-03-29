@@ -1,4 +1,4 @@
-library broadcast_receiver;
+library flutter_broadcast_receiver;
 
 typedef EventHandler<T> = void Function(T args);
 
