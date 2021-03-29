@@ -80,9 +80,9 @@ class BroadcastReceiver {
 
     handlers.forEach((EventHandler<T> handler) {
       try {
-        if(arguments != null){
+        if (arguments != null) {
           handler(arguments);
-        }else{
+        } else {
           throw 'arguments null';
         }
       } catch (_) {

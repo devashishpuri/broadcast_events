@@ -1,11 +1,11 @@
-# broadcast_receiver
+# flutter_broadcast_receiver
 
 Enables you to broadcast events in your app.
 
 ## Usage
 
 ```yaml
-flutter_broadcast_receiver: ^1.0.0+1
+flutter_broadcast_receiver: ^1.0.0+2
 ```
 
 ```dart

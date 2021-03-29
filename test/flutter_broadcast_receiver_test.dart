@@ -6,8 +6,7 @@ void main() {
     print(message);
   });
 
-  BroadcastReceiver()
-      .publish('CUSTOM_EVENT', arguments: 'Hello Cuk');
+  BroadcastReceiver().publish('CUSTOM_EVENT', arguments: 'Hello Cuk');
 
   /// Test Unsubscription
   final _handler = (int code) => print('The Code is: $code');
