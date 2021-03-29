@@ -1,19 +1,19 @@
-library broadcast_events;
+library broadcast_receiver;
 
 typedef EventHandler<T> = void Function(T args);
 
 /// The Custom Events Service that can publish data
 /// from one module/component to another.
-class BroadcastEvents {
-  static final BroadcastEvents _singleton = new BroadcastEvents._internal();
+class BroadcastReceiver {
+  static final BroadcastReceiver _singleton = new BroadcastReceiver._internal();
 
   Map<String, dynamic> _callbackMaps = Map<String, dynamic>();
 
-  factory BroadcastEvents() {
+  factory BroadcastReceiver() {
     return _singleton;
   }
 
-  BroadcastEvents._internal();
+  BroadcastReceiver._internal();
 
   /// Subscribe to an event topic. Events that
   /// get posted to that topic will trigger

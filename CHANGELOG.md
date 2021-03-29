@@ -1,7 +1,3 @@
-## 2.0.0
-
-* Migrate to null safety
-
 ## 1.0.0
 
-- Initial implementation
+- Initial implementation (null safety)

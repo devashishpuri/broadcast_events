@@ -1,11 +1,11 @@
-name: broadcast_events
+name: broadcast_receiver
 description: Enables you to broadcast global events in your app. Helpful in cases where your modules/components need to know about a change happened somewhere in your app. 
 
-version: 2.0.0
+version: 1.0.0
 
-author: Devashish Puri <devashishpuri@gmail.com>
+author: Dwiky Hardiansah <https://github.com/dwikyhardi>
 
-homepage: https://github.com/devashishpuri/broadcast_events
+homepage: https://github.com/dwikyhardi/broadcast_receiver
 
 environment:
   sdk: ">=2.12.2 <3.0.0"
