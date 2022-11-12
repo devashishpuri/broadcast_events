@@ -18,23 +18,28 @@ class BroadcastEvents {
   /// Subscribe to an event topic. Events that
   /// get posted to that topic will trigger
   /// the provided handler
+  ///
   /// * [topic] The topic to subscribe to
   /// * [handler] The event handler
   subscribe<T>(String topic, EventHandler<T> handler) {
-    List<EventHandler<T>> handlers = _callbackMaps[topic];
-    if (handlers == null) {
-      handlers = [];
-      _callbackMaps[topic] = handlers;
+    if (_callbackMaps[topic] == null) {
+      _callbackMaps[topic] = [].cast<EventHandler<T>>();
     }
+    List<EventHandler<T>> handlers = _callbackMaps[topic];
     handlers.add(handler);
   }
 
   /// Unsubscribe from the given topic. Your handler
   /// will no longer recieve events published to this
-  /// topic
+  /// topic.
+  ///
+  /// If [handler] is not provided, all subscribers
+  /// from the [topic] are Unsubscribed. Useful in cases
+  /// when you need to clear all handlers.
+  ///
   /// * [topic] The topic to unsubscribe from
   /// * [handler] The event handler
-  unsubscribe<T>(String topic, {EventHandler<T> handler}) {
+  unsubscribe<T>(String topic, {EventHandler<T>? handler}) {
     if (handler == null) {
       _callbackMaps.remove(topic);
       return;
@@ -59,19 +64,17 @@ class BroadcastEvents {
   /// Publish an Event to given topic.
   /// * [topic] The topic to publish to
   /// * [arguments] The arguments to pass to
-  /// the handlers. It's better if custom
-  /// Structure is used.
-  publish<T>(String topic, {T arguments}) {
+  ///
+  /// Pass null in [arguments] if not required,
+  /// And use ? with the Type
+  /// the handlers.
+  publish<T>(String topic, {required T arguments}) {
     List<EventHandler<T>> handlers;
     try {
-      handlers = _callbackMaps[topic];
+      handlers = _callbackMaps[topic] ?? [];
     } catch (_) {
       throw FormatException(
           'Type mismatch between Publisher Arguments and what Subscriber Expects');
-    }
-
-    if (handlers == null || handlers.isEmpty) {
-      return;
     }
 
     handlers.forEach((EventHandler<T> handler) {

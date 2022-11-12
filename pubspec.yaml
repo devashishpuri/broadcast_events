@@ -1,14 +1,12 @@
 name: broadcast_events
 description: Enables you to broadcast global events in your app. Helpful in cases where your modules/components need to know about a change happened somewhere in your app. 
 
-version: 1.0.0+1
-
-author: Devashish Puri <devashishpuri@gmail.com>
+version: 1.1.0+2
 
 homepage: https://github.com/devashishpuri/broadcast_events
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
 
